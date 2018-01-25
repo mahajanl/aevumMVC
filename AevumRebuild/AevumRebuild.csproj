@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -159,14 +160,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AevumDB.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AevumDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AevumDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\AevumDB.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>AevumDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Category.cs">
+      <DependentUpon>AevumDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Work.cs">
+      <DependentUpon>AevumDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\AevumBG.png" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -176,6 +189,12 @@
     <Content Include="Models\AevumDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AevumDB.Context.cs</LastGenOutput>
+      <DependentUpon>AevumDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\AevumDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>AevumDB.edmx</DependentUpon>
+      <LastGenOutput>AevumDB.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -186,9 +205,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>AevumDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Models\AevumDB.edmx.diagram">
+    <Content Include="Models\AevumDB.edmx.diagram">
       <DependentUpon>AevumDB.edmx</DependentUpon>
-    </None>
+    </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -214,6 +233,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Categories\Create.cshtml" />
+    <Content Include="Views\Categories\Delete.cshtml" />
+    <Content Include="Views\Categories\Details.cshtml" />
+    <Content Include="Views\Categories\Edit.cshtml" />
+    <Content Include="Views\Categories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

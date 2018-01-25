@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AevumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Work">
+    <Key>
+      <PropertyRef Name="WorkID" />
+    </Key>
+    <Property Name="WorkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="int" Nullable="false" />
+    <Property Name="WorkTitle" Type="nchar" MaxLength="100" Nullable="false" />
+    <Property Name="AuthorName" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="AuthorSurName" Type="nchar" MaxLength="100" />
+    <Property Name="WorkDescription" Type="nchar" MaxLength="1500" Nullable="false" />
+    <Property Name="ManuscriptType" Type="nchar" MaxLength="200" />
+    <Property Name="LocationWritten" Type="nchar" MaxLength="50" />
+    <Property Name="LocationFound" Type="nchar" MaxLength="50" />
+    <Property Name="CurrentLocation" Type="nchar" MaxLength="50" />
+    <Property Name="Category" Type="int" Nullable="false" />
+    <Property Name="NotesOnWork" Type="nchar" MaxLength="1500" />
+  </EntityType>
+  <Association Name="FK_Work_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Work" Type="Self.Work" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Work">
+        <PropertyRef Name="Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AevumModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Work" EntityType="Self.Work" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Work_Category" Association="Self.FK_Work_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Work" EntitySet="Work" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

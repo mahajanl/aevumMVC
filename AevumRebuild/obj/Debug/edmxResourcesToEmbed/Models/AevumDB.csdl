@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AevumModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Works" Relationship="Self.FK_Work_Category" FromRole="Category" ToRole="Work" />
+  </EntityType>
+  <EntityType Name="Work">
+    <Key>
+      <PropertyRef Name="WorkID" />
+    </Key>
+    <Property Name="WorkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="Int32" Nullable="false" />
+    <Property Name="WorkTitle" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="AuthorName" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="AuthorSurName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="WorkDescription" Type="String" MaxLength="1500" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ManuscriptType" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="LocationWritten" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="LocationFound" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="CurrentLocation" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="Category" Type="Int32" Nullable="false" />
+    <Property Name="NotesOnWork" Type="String" MaxLength="1500" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Category1" Relationship="Self.FK_Work_Category" FromRole="Work" ToRole="Category" />
+  </EntityType>
+  <Association Name="FK_Work_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Work" Type="Self.Work" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Work">
+        <PropertyRef Name="Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AevumEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Works" EntityType="Self.Work" />
+    <AssociationSet Name="FK_Work_Category" Association="Self.FK_Work_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Work" EntitySet="Works" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

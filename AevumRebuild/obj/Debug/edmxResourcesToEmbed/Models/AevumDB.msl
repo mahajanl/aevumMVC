@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AevumModelStoreContainer" CdmEntityContainer="AevumEntities">
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="AevumModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Works">
+      <EntityTypeMapping TypeName="AevumModel.Work">
+        <MappingFragment StoreEntitySet="Work">
+          <ScalarProperty Name="WorkID" ColumnName="WorkID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="WorkTitle" ColumnName="WorkTitle" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="AuthorSurName" ColumnName="AuthorSurName" />
+          <ScalarProperty Name="WorkDescription" ColumnName="WorkDescription" />
+          <ScalarProperty Name="ManuscriptType" ColumnName="ManuscriptType" />
+          <ScalarProperty Name="LocationWritten" ColumnName="LocationWritten" />
+          <ScalarProperty Name="LocationFound" ColumnName="LocationFound" />
+          <ScalarProperty Name="CurrentLocation" ColumnName="CurrentLocation" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="NotesOnWork" ColumnName="NotesOnWork" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
