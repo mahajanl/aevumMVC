@@ -1,0 +1,93 @@
+﻿@model IEnumerable<AevumRebuild.Models.Work>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorSurName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ManuscriptType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationWritten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LocationFound)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrentLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NotesOnWork)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category1.CategoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorSurName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ManuscriptType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationWritten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LocationFound)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NotesOnWork)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category1.CategoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.WorkID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.WorkID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.WorkID })
+        </td>
+    </tr>
+}
+
+</table>

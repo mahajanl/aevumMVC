@@ -1,0 +1,112 @@
+﻿@model AevumRebuild.Models.Work
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Work</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorSurName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorSurName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManuscriptType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManuscriptType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationWritten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationWritten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationFound)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationFound)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotesOnWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotesOnWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category1.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category1.CategoryName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

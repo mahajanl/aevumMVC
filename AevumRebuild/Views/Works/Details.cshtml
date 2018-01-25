@@ -1,0 +1,106 @@
+﻿@model AevumRebuild.Models.Work
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Work</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AuthorSurName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AuthorSurName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManuscriptType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManuscriptType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationWritten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationWritten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocationFound)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocationFound)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrentLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrentLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NotesOnWork)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NotesOnWork)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category1.CategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category1.CategoryName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WorkID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
