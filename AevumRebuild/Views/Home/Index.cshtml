@@ -1,31 +1,36 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+<div class=" container-fluid aevum">
+    <div class="container-fluid heading">
+        <div class="container-fluid aevumContainer text-center">
+            <h1 class="headingAevum">Aevum</h1>
+            <p class="lead">A timeline of rhetorical works through the ages</p>
+        </div>
+        <p class="text-center"><a href="@Url.Action("Index","Works")" role="button" class="bigButton">The Timeline</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    @*<a class="button" href="~/Works/Index" role="button">Learn more</a>*@
+    <div class="container-fluid aevumContainer">
+        <div class="row">
+            <div class="col-md-6">
+                <p class="indexBody"><a href="@Url.Action("Create", "Works")" role="button" class="letterButton">A</a>dd a Work</p>
+                <p class="indexBlurb">Add a work to the timeline to see where it stands in the evolution of rhetorical texts.</p>
+            </div>
+            <div class="col-md-6">
+                <p class="indexBody"><a href="@Url.Action("Authors", "Works")" role="button" class="letterButton">A</a>uthors</p>
+                <p class="indexBlurb">All of the authors in the Aevum Timeline, with details for each of their works in the Timeline.</p>
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p class="indexBody"><a href="@Url.Action("About", "Home")" role="button" class="letterButton">A</a>bout the Creators</p>
+                <p class="indexBlurb">The people behind the modern Aevum</p>
+            </div>
+            <div class="col-md-6">
+                <p class="indexBody"><a href="@Url.Action("Contact", "Home")" role="button" class="letterButton">C</a>ontact Us</p>
+                <p class="indexBlurb">Let us know if you have questions or feedback on the project</p>
+            </div>
+        </div>
     </div>
 </div>
