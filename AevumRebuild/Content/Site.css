@@ -1,12 +1,15 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #D7B468;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: #ECD9AF;
+    border: groove #D7B468 5px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -22,3 +25,159 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar.navbar-fixed-top {
+    background-color: #802A1F;
+    color: #ECD9AF;
+    font-family: 'Vollkorn SC', serif;
+}
+
+    .navbar.navbar-fixed-top a {
+        background-color: #802A1F;
+        color: #ECD9AF;
+    }
+
+        .navbar.navbar-fixed-top a:hover {
+            background-color: #ECD9AF;
+            color: #802A1F;
+        }
+
+.aevum {
+    background-image: url('AevumBG.png');
+}
+
+.heading {
+    padding: 15px 15px 15px 15px;
+}
+
+.aevumContainer {
+    background-color: rgba(236,217,175,.7);
+    margin-bottom: 20px;
+}
+
+.headingAevum {
+    font-family: 'Fondamento', cursive;
+    font-size: 108px;
+    color: #802A1F;
+    text-align: center;
+}
+
+.lead {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 36px;
+    text-align: center;
+    color: black;
+}
+/*BUTTONS*/
+.bigButton {
+    font-size: 48px;
+    font-family: 'Vollkorn SC', serif;
+    padding: 5px 10px 5px 10px;
+    background-color: #ECD9AF;
+    border: groove #D7B468 3px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+a {
+    color: black;
+}
+
+    a:link {
+        color: black;
+    }
+
+    a:hover {
+        background-color: #D7B468;
+        color: black;
+    }
+
+.letterButton {
+    font-family: 'Fondamento', cursive;
+    font-size: 44px;
+    background-color: #ECD9AF;
+    border: groove #4C5C84 3px;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.smallButton {
+    font-family: 'Vollkorn SC', serif;
+    color: black;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+.indexBody {
+    font-family: 'Vollkorn SC', serif;
+    padding: 10px 25px 0px 25px;
+    margin-bottom: 0px;
+    font-size: 32px;
+    margin-top: 32px;
+    color: black;
+}
+
+.indexBlurb {
+    font-family: 'Vollkorn SC', serif;
+    padding: 0px 25px 10px 70px;
+    font-size: 20px;
+    margin-top: 0px;
+}
+
+.work {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 18px;
+    background-color: #D7B468;
+    border: 2px inset #802A1F;
+    margin: 0px 40px 10px 0px;
+    text-align: center;
+    color: black;
+}
+
+.titleDisplay h3::first-letter {
+    font-size: 125%;
+}
+
+.search {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 18px;
+    background-color: #D7B468;
+    border: 2px inset #802A1F;
+}
+
+.editDetails a {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 16px;
+    color: #802A1F;
+}
+
+.editDetails {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #802A1F;
+    text-align: center;
+}
+
+.addAWork {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #802A1F;
+    text-align: center;
+}
+
+    .addAWork a {
+        font-family: 'Vollkorn SC', serif;
+        font-size: 24px;
+        color: #802A1F;
+    }
+/*COLORS light brown #ECD9AF medium brown #D7B468 dark brown #471512*/
+/*FONT COLORS deep red brown #802A1F blue #4C5C84 yellow #F7BD38*/
+/*FONTS aevum= font-family: 'Fondamento', cursive; body= font-family: 'Vollkorn SC', serif;*/
+/*https://upload.wikimedia.org/wikipedia/commons/3/36/Benedetto_Bordon_-_Leaf_from_Breviary_-_Walters_W3331V_-_Open_Reverse.jpg*/
+/*http://dublincore.org/documents/dces/*/

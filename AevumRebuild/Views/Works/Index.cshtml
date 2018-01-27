@@ -1,93 +1,52 @@
-﻿@model IEnumerable<AevumRebuild.Models.Work>
+﻿
+@model IEnumerable<AevumRebuild.Models.Work>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h1 class="lead">Index of Works</h1>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
+<p class="addAWork">
+    @Html.ActionLink("Add a Work", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WorkTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AuthorName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AuthorSurName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WorkDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ManuscriptType)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LocationWritten)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LocationFound)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CurrentLocation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NotesOnWork)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Category1.CategoryName)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WorkTitle)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AuthorSurName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WorkDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ManuscriptType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocationWritten)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LocationFound)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CurrentLocation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NotesOnWork)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Category1.CategoryName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.WorkID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.WorkID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.WorkID })
-        </td>
-    </tr>
-}
+<div>
+    @using (Html.BeginForm())
+    {
+        <p class="search">
+            @Html.RadioButton("Search", "Title", true)<span>Find by Title</span>
+            @Html.RadioButton("Search", "Name")<span>Author</span>
+            @Html.RadioButton("Search", "Date")<span>Date</span>
+            @Html.RadioButton("Search", "Description")<span>Keywords in Description</span>
+            @Html.RadioButton("Search", "Notes")<span>Keywords in Notes</span>
+            @Html.TextBox("SearchString")
+            <input type="submit" value="Search" />
+        </p>
+    }
+</div>
 
-</table>
+<section>
+    @foreach (var item in Model)
+    {
+        <div class="container">
+            <div class="work informationDisplay row">
+                <div class="col-md-2">
+                    <h2>@Html.DisplayFor(modelItem => item.Date)</h2>
+                </div>
+                <div class="col-md-5 titleDisplay">
+                    <h3>@Html.DisplayFor(modelItem => item.WorkTitle)</h3>
+                </div>
+                <div class="col-md-5 titleDisplay">
+                    <h3>@Html.DisplayFor(modelItem => item.AuthorName) @Html.DisplayFor(modelItem => item.AuthorSurName)</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row editDetails">
+            <div class="col-md-6"><a href="@Url.Action("Edit", "Works", new { id = item.WorkID })" class="smallButton text-center" style="float:right" role="button">Edit Entry</a></div>
+            <div class="col-md-6">
+                <a href="@Url.Action("Details", "Works", new { id = item.WorkID })" class="smallButton text-center" style="float:left" role="button">Entry Details</a>
+            </div>
+        </div>
+    }
+</section>
