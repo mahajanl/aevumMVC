@@ -8,17 +8,65 @@ using System.Web;
 using System.Web.Mvc;
 using AevumRebuild.Models;
 
-namespace AevumRebuild.Controllers
+namespace Aevum.Controllers
 {
     public class WorksController : Controller
     {
         private AevumEntities db = new AevumEntities();
 
         // GET: Works
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    var works = db.Works.Include(w => w.Category1);
+        //    return View(works.ToList());
+        //}
+
+        public ActionResult Index(string Search, string searchString)
         {
-            var works = db.Works.Include(w => w.Category1);
-            return View(works.ToList());
+            var titles = from title in db.Works
+                         select title;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                if (Search == "Title")
+                {
+                    titles = titles.Where(title => title.WorkTitle.Contains(searchString));
+                }
+                else if (Search == "Name")
+                {
+                    titles = titles.Where(title => title.AuthorName.Contains(searchString));
+                }
+                else if (Search == "Date")
+                {
+                    titles = titles.Where(title => title.Date.ToString().Contains(searchString));
+                }
+                else if (Search == "Description")
+                {
+                    titles = titles.Where(title => title.WorkDescription.Contains(searchString));
+                }
+                else if (Search == "Notes")
+                {
+                    titles = titles.Where(title => title.NotesOnWork.Contains(searchString));
+                }
+            }
+
+            return View(titles.ToList().OrderBy(o => o.Date));
+
+        }
+
+        public ActionResult Authors(string Search, string searchString)
+        {
+            var authors = from author in db.Works
+                          select author;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                if (Search == "Name")
+                {
+                    authors = authors.Where(author => author.AuthorName.Contains(searchString));
+                }
+            }
+            return View(authors.ToList().OrderBy(o => o.AuthorName));
         }
 
         // GET: Works/Details/5

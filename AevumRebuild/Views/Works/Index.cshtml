@@ -29,16 +29,16 @@
 <section>
     @foreach (var item in Model)
     {
-        <div class="container">
+        <div class="container ">
             <div class="work informationDisplay row">
                 <div class="col-md-2">
-                    <h2>@Html.DisplayFor(modelItem => item.Date)</h2>
+                    <p>@Html.DisplayFor(modelItem => item.Date)</p>
                 </div>
                 <div class="col-md-5 titleDisplay">
-                    <h3>@Html.DisplayFor(modelItem => item.WorkTitle)</h3>
+                    <p>@Html.DisplayFor(modelItem => item.WorkTitle)</p>
                 </div>
                 <div class="col-md-5 titleDisplay">
-                    <h3>@Html.DisplayFor(modelItem => item.AuthorName) @Html.DisplayFor(modelItem => item.AuthorSurName)</h3>
+                    <p>@Html.DisplayFor(modelItem => item.AuthorName) @Html.DisplayFor(modelItem => item.AuthorSurName)</p>
                 </div>
             </div>
         </div>

@@ -44,6 +44,7 @@ textarea {
 
 .aevum {
     background-image: url('AevumBG.png');
+    padding: 0px 35px 35px 35px;
 }
 
 .heading {
@@ -138,9 +139,21 @@ a {
     color: black;
 }
 
-.titleDisplay h3::first-letter {
-    font-size: 125%;
+.informationDisplay {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 24px;
+    padding: 9px 0px 0px 0px;
 }
+
+/*.titleDisplay {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 28px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}*/
+    .titleDisplay p::first-letter {
+        font-size: 125%;
+    }
 
 .search {
     font-family: 'Vollkorn SC', serif;
