@@ -4,45 +4,31 @@
     ViewBag.Title = "Details";
 }
 
-<h2 class="headingAevum">@Html.DisplayFor(model => model.WorkTitle)</h2>
+<p class="detailsHeading">@Html.DisplayFor(model => model.WorkTitle)</p>
+<hr />
 
-<div>
-    <h4>Work</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Date)
-        </dt>
-
-        <dd>
+@* DISPLAY NAME FOR IS THE DAMN LABEL *@
+<div class="work container">
+    <div class="row">
+        <div class="col-md-4">
             @Html.DisplayFor(model => model.Date)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.WorkTitle)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.WorkTitle)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.AuthorName)
-        </dt>
-
-        <dd>
+        </div>
+        <div class="col-md-4">
             @Html.DisplayFor(model => model.AuthorName)
-        </dd>
+            @if (Model.AuthorSurName == null)
+            {
+                Model.AuthorSurName = " ";
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.AuthorSurName)
+            }
+        </div>
+        <div class="col-md-3">
+            <p>PDF Placeholder</p>
+        </div>
+    </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.AuthorSurName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.AuthorSurName)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.WorkDescription)
         </dt>
 

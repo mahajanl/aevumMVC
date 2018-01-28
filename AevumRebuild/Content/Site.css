@@ -190,6 +190,22 @@ a {
         color: #802A1F;
     }
 
+.detailsHeading {
+    font-family: 'Fondamento', cursive;
+    font-size: 72px;
+    color: #802A1F;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.workDetails {
+    font-family: 'Vollkorn SC', serif;
+    font-size: 18px;
+    background-color: #D7B468;
+    border: 2px inset #802A1F;
+    margin: 0px 40px 10px 0px;
+    color: black;
+}
 .theFooter {
     font-family: 'Vollkorn SC', serif;
     font-size: 16px;
